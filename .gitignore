@@ -1,2 +1,7 @@
-node_modules
-.env
+# Environment file for backend
+IntentManager/backend/.env
+
+# Node.js dependencies
+node_modules/
+
+model.nlp
