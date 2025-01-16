@@ -10,7 +10,7 @@
   <div class="chat-container">
     <div class="header">
       <h2>Chat Assistant</h2>
-      <div class="separator"></div> <!-- Separation line -->
+      <div class="separator"></div>
     </div>
     <ul id="messages" class="message-list"></ul>
     <form id="chat-form" class="chat-form">
@@ -29,13 +29,11 @@
       const userMessage = input.value;
       if (!userMessage) return;
 
-      // Display the user's message
       const userMessageItem = document.createElement('li');
       userMessageItem.classList.add('user-message');
       userMessageItem.textContent = userMessage;
       messages.appendChild(userMessageItem);
 
-      // Send the message to the backend
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
@@ -47,13 +45,11 @@
       const data = await response.json();
       const botMessage = data.reply;
 
-      // Display the bot's response
       const botMessageItem = document.createElement('li');
       botMessageItem.classList.add('bot-message');
       botMessageItem.textContent = botMessage;
       messages.appendChild(botMessageItem);
 
-      // Scroll to the bottom of the messages
       messages.scrollTop = messages.scrollHeight;
       input.value = '';
     });

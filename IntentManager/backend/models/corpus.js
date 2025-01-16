@@ -6,6 +6,6 @@ const corpusSchema = new mongoose.Schema({
   responses: [String]
 });
 
-const Corpus = mongoose.model('Corpus', corpusSchema);
+const Corpus = mongoose.model('Intent', corpusSchema);
 
 module.exports = Corpus;

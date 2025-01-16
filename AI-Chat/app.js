@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { getChatResponse } = require('./nlp');
+const { handleUserInput } = require('./services/chatbot');
 const path = require('path');
 const cors = require('cors');
 
@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // POST route
 app.post('/api/chat', async (req, res) => {
   const userMessage = req.body.message;
-  const botResponse = await getChatResponse(userMessage);
+  const botResponse = await handleUserInput(userMessage);
   res.json({ reply: botResponse });
 });
 

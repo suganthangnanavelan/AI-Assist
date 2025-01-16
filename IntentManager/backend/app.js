@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/nlp_corpus")
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/restaurant")
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
